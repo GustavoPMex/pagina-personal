@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My personal web">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gustavo Mex | {% block title %}{% endblock title %} </title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'core/img/logo-pagina.ico' %}">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,500,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="{% block classheader %}{% endblock classheader %}">
+        <div class="contain-logos-header">
+            <div class="contain-logo-h">
+                <a class="contain-logo-link" href="/"><img class="contain-logo-header" src="{% static 'core/img/logo-pagina.png' %}" alt="Logo-pagina" title="Logo de página"></a>
+                
+            </div>
+            
+            <nav class="menu">
+                <img class="contain-menu-header" src="{% static 'core/img/menu.png' %}" alt="Menu">
+
+                <ul class="contain-menu-list">
+                    <li class="menu-list-item"><a class="menu-list-link" href="{% url 'home' %}">Home</a></li>
+                    <li class="menu-list-item"><a class="menu-list-link" href="{% url 'about' %}">About</a></li>
+                    <li class="menu-list-item"><a class="menu-list-link" href="{% url 'portfolio' %}">Portfolio</a></li>
+                    <li class="menu-list-item"><a class="menu-list-link" href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="contain-title-header">
+            <h1 class="h1-header">{% block hheader %}{% endblock hheader %}</h1>
+            <p class="p-header">{% block pheader %}{% endblock pheader %}</p>
+        </div>
+    </header>
+
+    {% block content %}
+      
+    {% endblock content %}
+
+    <footer class="main-footer">
+        <section class="container-redesredessociales">
+            <ul class="lista-redessociales">
+                {% if LINK_FACEBOOK %}
+                    <li class="redessociales-item"><a class="redessociales-link" target="_blank" href="{{LINK_FACEBOOK}}"><img class="redessociales-logo" src="{% static 'core/img/facebook.png' %}" alt="Link Facebook" title="Link Facebook"></a></li>
+                {% endif %}
+                
+                {% if LINK_TWITTER %}
+                    <li class="redessociales-item"><a class="redessociales-link" target="_blank" href="{{LINK_TWITTER}}"><img class="redessociales-logo" src="{% static 'core/img/twitter.png' %}" alt="Link Twitter" title="Link Twitter"></a></li>
+                {% endif %}
+                
+                {% if LINK_GITHUB %}
+                    <li class="redessociales-item"><a class="redessociales-link" target="_blank" href="{{LINK_GITHUB}}"><img class="redessociales-logo" src="{% static 'core/img/github-logo.png' %}" alt="Link Github" title="Link Github"></a></li>
+                {% endif %}
+            </ul>
+        </section>
+
+        <p class="container-p">Gustavo P. Mex  © 2019</p>
+    </footer>
+    <script src="{% static 'core/js/script.js' %}"></script>
+</body>
+</html>

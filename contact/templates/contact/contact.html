@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block classheader %}main-header-contact{% endblock classheader %}
+
+{% block hheader %}Contact{% endblock hheader %}
+
+{% block pheader %}Your opinion is important{% endblock pheader %}
+
+{% block content %}
+    <div class="content-contact">
+        <div class="content-p">
+            <p class="p1-contact">Phone: </p>
+            <p class="p2-contact"> 9**-1**-1*-1*</p>
+
+        </div>
+
+        <form class="form-contact"   action=""   method="POST" >
+            {% csrf_token %}
+            <label class="label-contact" for="" >Name:
+                {{form.name}}
+            </label>
+
+            <label class="label-contact" for="">Email:
+                {{form.email}}
+            </label>
+
+            <label class="label-contact-c" for="">Comment:
+                {{form.content}}
+            </label>
+
+            <label class="label-contact-t" for=""> Accept terms and conditions
+                {{form.terms}}
+            </label>
+
+            <input class="button-contact" type="submit" value="Send">
+        </form>
+
+    </div>
+  
+{% endblock content %}

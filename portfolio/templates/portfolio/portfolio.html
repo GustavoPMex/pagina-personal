@@ -1,0 +1,34 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Portfolio{% endblock title %}
+
+{% block classheader %}main-header-portfolio{% endblock classheader %}
+
+{% block hheader %}Portfolio{% endblock hheader %}
+
+{% block pheader %}My projects{% endblock pheader %}
+
+{% block content %}
+
+    {% if projects %}
+        {% for project in projects %}
+            <div class="content-portfolio">
+                <div class="content-img-portfolio" style="background-image: url({{project.image.url}});">
+                    
+                </div>
+                <div class="content-text-portfolio">
+                    <p class="p1-portfolio" >{{project.description}}</p>
+                    {% if project.url %}
+                        <a class="link-portfolio" href=""><p class="p2-portfolio">{{project.url}}</p></a>
+                    {% else %}
+                        Sin enlace
+                    {% endif %}
+
+                </div>
+
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="p-proyects">No hay proyectos</p>
+    {% endif %}
+{% endblock content %}

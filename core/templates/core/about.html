@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+
+{% block title %}About me{% endblock title %}
+
+{% block classheader %}main-header-about{% endblock classheader %}
+
+{% block hheader %}About me{% endblock hheader %}
+{% block pheader %}Know me{% endblock pheader %}
+
+{% block content %}
+
+<div class="content-about">
+    {% for des in descripcion  %}
+        <div class="content-elements">
+            <div class="container-img">
+                <img class="about-img" src="{{des.imagen_profile.url}}" alt="imagen profile" title="imagen profile">
+                
+            </div>
+            <div class="content-pa">
+                <p class="about-p1">{{des.description_one}} </p>
+            </div>
+        </div>
+        <p class="about-p2">{{des.description_two}}</p>
+    {% endfor %}
+</div>
+
+{% endblock content %}
