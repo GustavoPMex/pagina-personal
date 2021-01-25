@@ -4,7 +4,7 @@
 		<img src="https://img.shields.io/github/last-commit/gustavopmex/pagina-personal?style=for-the-badge" alt="last-commit">
 	</a>
 	<a href="#changelog">
-		<img src="https://img.shields.io/pypi/pyversions/Django?style=for-the-badge" alt="last-commit">
+		<img src="https://img.shields.io/github/languages/top/gustavopmex/pagina-personal?style=for-the-badge" alt="lang-top">
 	</a>
 	<a href="#changelog">
 		<img src="https://img.shields.io/github/contributors/gustavopmex/pagina-personal?style=for-the-badge" alt="contributors">
